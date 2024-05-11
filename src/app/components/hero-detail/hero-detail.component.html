@@ -1,10 +1,19 @@
 <div *ngIf="hero">
 
-    <h2>{{hero.name | uppercase}} Details</h2>
-    <div><span>id: </span>{{hero.id}}</div>
-    <div>
-      <label for="hero-name">Hero name: </label>
-      <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+  <h2>{{hero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{hero.id}}</div>
+  <div>
+    <div class="mb-3">
+
+      <div class="input-group">
+        <span class="input-group-text" id="hero-name">Hero name</span>
+        <input type="text" class="form-control" id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+      </div>
+
     </div>
-  
+
+    <!-- <label for="hero-name">Hero name: </label>
+    <input class="form-control" id="hero-name" [(ngModel)]="hero.name" placeholder="name"> -->
+  </div>
+
 </div>

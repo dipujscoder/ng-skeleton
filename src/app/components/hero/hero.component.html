@@ -8,7 +8,7 @@
                 <h2>My Heroes</h2>
                 <ul class="heroes list-unstyled">
                     <li *ngFor="let hero of heroes" class="mb-2">
-                        <button type="button" class="btn btn-primary"  [class.active]="hero === selectedHero"
+                        <button type="button" class="btn btn-primary" [class.active]="hero === selectedHero"
                             (click)="onSelect(hero)">
                             <span class="badge">{{hero.id}}</span>
                             <span class="name">{{hero.name}}</span>
@@ -19,11 +19,5 @@
             </div>
         </div>
 
-        
-
-        <!-- <div>
-            <label for="name">Hero name: </label>
-            <input id="name" [(ngModel)]="hero.name" placeholder="name">
-        </div> -->
     </div>
 </section>
