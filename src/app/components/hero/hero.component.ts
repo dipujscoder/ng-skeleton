@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HEROES } from './mock-heroes';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 import { HeroService } from '../../services/hero.service';
-HeroService;
+import { MessageService } from '../../services/message.service';
 
 @Component({
   selector: 'app-hero',
@@ -15,7 +15,10 @@ HeroService;
   styleUrl: './hero.component.css',
 })
 export class HeroComponent {
-  constructor(private heroService: HeroService) {}
+  constructor(
+    private heroService: HeroService,
+    private messageService: MessageService
+  ) {}
 
   hero: Hero = {
     id: 1,
@@ -28,8 +31,7 @@ export class HeroComponent {
   onSelect(hero: Hero): void {
     this.hero = hero;
     this.selectedHero = hero;
-
-    console.log('hero', hero);
+    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
   }
 
   ngOnInit(): void {
