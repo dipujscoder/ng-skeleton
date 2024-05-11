@@ -1,23 +1,29 @@
 <section>
     <div class="container">
-        <h2>{{ hero.name | uppercase }} Details</h2>
-        <div><span>id: </span>{{hero.id}}</div>
-        <div><span>name: </span>{{hero.name}}</div>
+        <div class="row">
+            <div class="col-md-6">
+                <app-hero-detail [hero]="hero"></app-hero-detail>
+            </div>
+            <div class="col-md-6">
+                <h2>My Heroes</h2>
+                <ul class="heroes list-unstyled">
+                    <li *ngFor="let hero of heroes" class="mb-2">
+                        <button type="button" class="btn btn-primary"  [class.active]="hero === selectedHero"
+                            (click)="onSelect(hero)">
+                            <span class="badge">{{hero.id}}</span>
+                            <span class="name">{{hero.name}}</span>
+                        </button>
+                    </li>
 
-        <h2>My Heroes</h2>
-        <ul class="heroes list-unstyled">
-            <li *ngFor="let hero of heroes">
-                <button type="button" class="btn btn-primary">
-                    <span class="badge">{{hero.id}}</span>
-                    <span class="name">{{hero.name}}</span>
-                </button>
-            </li>
+                </ul>
+            </div>
+        </div>
 
-        </ul>
+        
 
-        <div>
+        <!-- <div>
             <label for="name">Hero name: </label>
             <input id="name" [(ngModel)]="hero.name" placeholder="name">
-        </div>
+        </div> -->
     </div>
 </section>
