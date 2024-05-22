@@ -28,8 +28,6 @@ export class HeroComponent {
   onSelect(hero: Hero): void {
     this.hero = hero;
     this.selectedHero = hero;
-
-    console.log('hero', hero);
   }
 
   ngOnInit(): void {

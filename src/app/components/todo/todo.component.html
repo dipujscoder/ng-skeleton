@@ -1,0 +1,49 @@
+<section class="py-5 my-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header h2 bg-primary text-white">Todo List</div>
+          <div class="card-body pb-0">
+            <form action="" [formGroup]="form" (ngSubmit)="onSubmit()">
+              <div class="input-group border-bottom pb-4">
+                <input
+                  type="text"
+                  [ngClass]="{ 'is-invalid': error }"
+                  class="form-control"
+                  placeholder="Write a Item"
+                  formControlName="task"
+                />
+
+                <button class="btn btn-primary" id="basic-addon2">Add</button>
+
+                <div class="invalid-feedback" *ngIf="error">
+                  {{ error }}
+                </div>
+              </div>
+            </form>
+
+            <ul class="list-unstyled mb-0">
+              <li
+                class="d-flex justify-content-between border-bottom py-3"
+                *ngFor="let todo of todoList"
+              >
+                <span>{{ todo.task }}</span>
+                <button class="btn btn-sm btn-danger">&#215;</button>
+              </li>
+
+              <!-- <li class="d-flex justify-content-between border-bottom py-3">
+                <span>Lorem ipsum dolor sit amet.</span>
+                <button class="btn btn-sm btn-danger">&#215;</button>
+              </li>
+              <li class="d-flex justify-content-between py-3">
+                <span>Lorem ipsum dolor sit amet.</span>
+                <button class="btn btn-sm btn-danger">&#215;</button>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

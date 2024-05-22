@@ -37,8 +37,8 @@ export class LoginComponent implements OnInit {
       this.isLoading = true;
       this.authService.login(this.form.value).subscribe({
         next: (data) => {
-          localStorage.setItem('token', data.token);
-          localStorage.setItem('permissions', data.permissions);
+          // localStorage.setItem('token', data.token);
+          // localStorage.setItem('permissions', data.permissions);
 
           this.isLoading = false;
 
@@ -60,7 +60,6 @@ export class LoginComponent implements OnInit {
         },
       });
     } else {
-      console.log(this.form.controls);
       let errors: any = {};
 
       const controls = this.form.controls;
